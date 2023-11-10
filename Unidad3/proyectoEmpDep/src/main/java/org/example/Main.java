@@ -25,12 +25,12 @@ public class Main {
         }else{
             System.out.println("Error en la conexion");
         }
-        conexionCerrada = empresa.cerrarConexion();
+        /*conexionCerrada = empresa.cerrarConexion();
         if (conexionCerrada){
             System.out.println("Se ha cerrado la conexion");
         }else{
             System.out.println("Error en la conexion");
-        }
+        }*/
 
 
     }
