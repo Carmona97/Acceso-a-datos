@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="correccion del tipo idDepartamento">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Crea la base de datos y no permite que se dupliquen las filas de las tablas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" afterDir="false" />
     </list>
@@ -100,7 +98,7 @@
       <workItem from="1699623510714" duration="98000" />
       <workItem from="1699630429264" duration="171000" />
       <workItem from="1699630869365" duration="2970000" />
-      <workItem from="1699633921554" duration="5443000" />
+      <workItem from="1699633921554" duration="6829000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion de las clases del proyecto">
       <option name="closed" value="true" />
@@ -142,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699634970506</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Crea la base de datos y no permite que se dupliquen las filas de las tablas">
+      <option name="closed" value="true" />
+      <created>1699639871685</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699639871685</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +168,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creacion de las clases del proyecto" />
     <MESSAGE value="correccion del tipo idDepartamento" />
-    <option name="LAST_COMMIT_MESSAGE" value="correccion del tipo idDepartamento" />
+    <MESSAGE value="Crea la base de datos y no permite que se dupliquen las filas de las tablas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crea la base de datos y no permite que se dupliquen las filas de las tablas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

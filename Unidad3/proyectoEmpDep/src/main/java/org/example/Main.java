@@ -19,6 +19,7 @@ public class Main {
         ArrayList<Empleado> empleadosdpto5 = new ArrayList<>();
         ArrayList<Empleado> empleadosdpto6 = new ArrayList<>();
         ArrayList<Empleado> empleadosdpto7 = new ArrayList<>();
+
         Departamento dpto1 = new Departamento(1, "Desarrollo", 120000, 6000,empleadosdpto1);
         Departamento dpto2 = new Departamento(2, "Sistemas", 150000, 21000,empleadosdpto2);
         Departamento dpto3 = new Departamento(3, "Recursos Humanos", 280000, 25000, empleadosdpto3);
@@ -107,7 +108,5 @@ public class Main {
         }else{
             System.out.println("Error en la conexion");
         }
-
-
     }
 }

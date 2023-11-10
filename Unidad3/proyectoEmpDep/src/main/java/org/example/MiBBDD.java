@@ -164,6 +164,9 @@ public class MiBBDD {
         return anadidoCorrectamente;
     }
 
+    public void apellidosEmp(){
+
+    }
 
 
 
