@@ -10,6 +10,8 @@ public class Main {
         boolean conexionIniciada;
         boolean conexionCerrada;
         MiBBDD empresa;
+
+        ArrayList<Empleado> listaCompletaEmpleados = new ArrayList<>();
         ArrayList<Empleado> empleadosdpto1 = new ArrayList<>();
         ArrayList<Empleado> empleadosdpto2 = new ArrayList<>();
         ArrayList<Empleado> empleadosdpto3 = new ArrayList<>();
@@ -34,7 +36,27 @@ public class Main {
         Empleado emp8 = new Empleado(8, "71651431Z", "Pepe", "Ruiz", "Santana", 3);
         Empleado emp9 = new Empleado(9, "56399183D", "Juan", "Gómez", "López", 2);
         Empleado emp10 = new Empleado(10, "46384486H", "Diego", "Flores", "Salas", 5);
-
+        listaCompletaEmpleados.add(emp1);
+        listaCompletaEmpleados.add(emp2);
+        listaCompletaEmpleados.add(emp3);
+        listaCompletaEmpleados.add(emp4);
+        listaCompletaEmpleados.add(emp5);
+        listaCompletaEmpleados.add(emp6);
+        listaCompletaEmpleados.add(emp7);
+        listaCompletaEmpleados.add(emp8);
+        listaCompletaEmpleados.add(emp9);
+        listaCompletaEmpleados.add(emp10);
+        for(Empleado emp : listaCompletaEmpleados){
+            switch (emp.getIdDepartamento()){
+                case 1 -> empleadosdpto1.add(emp);
+                case 2 -> empleadosdpto2.add(emp);
+                case 3 -> empleadosdpto3.add(emp);
+                case 4 -> empleadosdpto4.add(emp);
+                case 5 -> empleadosdpto5.add(emp);
+                case 6 -> empleadosdpto6.add(emp);
+                case 7 -> empleadosdpto7.add(emp);
+            }
+        }
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -56,9 +78,29 @@ public class Main {
             System.out.println("Error en la conexion");
         }
 
+        empresa.borrarTablaEmpleado();
+        empresa.borrarTablaDepartamento();
+
         empresa.crearTablaDepartamento();
         empresa.crearTablaEmpleado();
 
+        System.out.println(empresa.anadirDpto(dpto1));
+        System.out.println(empresa.anadirDpto(dpto2));
+        System.out.println(empresa.anadirDpto(dpto3));
+        System.out.println(empresa.anadirDpto(dpto4));
+        System.out.println(empresa.anadirDpto(dpto5));
+        System.out.println(empresa.anadirDpto(dpto6));
+        System.out.println(empresa.anadirDpto(dpto7));
+        System.out.println(empresa.anadirEmpleado(emp1));
+        System.out.println(empresa.anadirEmpleado(emp2));
+        System.out.println(empresa.anadirEmpleado(emp3));
+        System.out.println(empresa.anadirEmpleado(emp4));
+        System.out.println(empresa.anadirEmpleado(emp5));
+        System.out.println(empresa.anadirEmpleado(emp6));
+        System.out.println(empresa.anadirEmpleado(emp7));
+        System.out.println(empresa.anadirEmpleado(emp8));
+        System.out.println(empresa.anadirEmpleado(emp9));
+        System.out.println(empresa.anadirEmpleado(emp10));
         conexionCerrada = empresa.cerrarConexion();
         if (conexionCerrada){
             System.out.println("Se ha cerrado la conexion");
