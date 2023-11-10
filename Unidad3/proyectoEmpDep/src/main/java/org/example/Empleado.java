@@ -6,7 +6,7 @@ public class Empleado {
     private String nombre;
     private String apellido1;
     private String apellido2;
-    private Departamento idDepartamento;
+    private int idDepartamento;
 
     public Empleado(int id, String dni, String nombre, String apellido1, String apellido2, int idDepartamento) {
         this.id = id;
@@ -57,11 +57,11 @@ public class Empleado {
         this.apellido2 = apellido2;
     }
 
-    public Departamento getIdDepartamento() {
+    public int getIdDepartamento() {
         return idDepartamento;
     }
 
-    public void setIdDepartamento(Departamento idDepartamento) {
+    public void setIdDepartamento(int idDepartamento) {
         this.idDepartamento = idDepartamento;
     }
 }
