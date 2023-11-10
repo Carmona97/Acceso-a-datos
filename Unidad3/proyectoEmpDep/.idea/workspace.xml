@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Creacion de las clases del proyecto">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ACDATuni3Act3/src/usoStatements/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ACDATuni3Act3/src/usoStatements/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Departamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
