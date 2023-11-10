@@ -20,7 +20,7 @@ public class MiBBDD {
     }
 
     public boolean iniciarConexion(){
-        boolean conexionEstablecida =true;
+        boolean conexionEstablecida= true;
         try{
             Class.forName("org.postgresql.Driver");
             Connection conn1 = this.conn;
