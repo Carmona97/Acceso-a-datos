@@ -14,6 +14,7 @@ public class Main {
         ResultSet rs = statement.executeQuery(SQLsentence);
         System.out.println("Codigo"+"\t"+"Nombre");
         while(rs.next()){
+
             System.out.println(rs.getString(1)+"\t"+rs.getString(2));
         }
         rs.close();
