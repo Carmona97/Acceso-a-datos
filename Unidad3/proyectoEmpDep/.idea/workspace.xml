@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Creacion de las clases del proyecto">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Departamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +41,12 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -54,7 +65,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/Acceso a datos/Acceso-a-datos/Unidad3/uni3Act3ConMaven&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Juanma/Desktop/2 DAM/ProyectosIntelliJ/Acceso-a-datos/Unidad3/proyectoEmpDep&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,6 +99,9 @@
       <workItem from="1699620404623" duration="859000" />
       <workItem from="1699621298774" duration="450000" />
       <workItem from="1699623510714" duration="98000" />
+      <workItem from="1699630429264" duration="171000" />
+      <workItem from="1699630869365" duration="2970000" />
+      <workItem from="1699633921554" duration="875000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion de las clases del proyecto">
       <option name="closed" value="true" />

@@ -42,24 +42,68 @@ public class MiBBDD {
         return conexionCerrada;
     }
 
-    public void crearTablaEmpleado(){
-
+    public void crearTablaDepartamento(){
         PreparedStatement ps = null;
         try {
-            ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS empleado(id SERIAL PRIMARY KEY, nif VARCHAR(9) NOT NULL UNIQUE,nombre VARCHAR(100) NOT NULL,apellido1 VARCHAR(100) NOT NULL,apellido2 VARCHAR(100),id_departamento INT, FOREIGN KEY (id_departamento) REFERENCES departamento(id);)");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
+            ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS departamento(id SERIAL PRIMARY KEY,\n" +
+                    "  nombre VARCHAR(100) NOT NULL,\n" +
+                    "  presupuesto DOUBLE PRECISION NOT NULL,\n" +
+                    "  gastos DOUBLE PRECISION NOT NULL);");
             ps.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
+    }
+
+    public void crearTablaEmpleado() {
+        PreparedStatement ps = null;
         try {
-            ps.close();
+            ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS empleado(id SERIAL PRIMARY KEY," +
+                    " nif VARCHAR(9) NOT NULL UNIQUE," +
+                    " nombre VARCHAR(100) NOT NULL," +
+                    " apellido1 VARCHAR(100) NOT NULL," +
+                    " apellido2 VARCHAR(100), id_departamento INT" +
+                    ", FOREIGN KEY (id_departamento) REFERENCES departamento(id));");
+            ps.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public String anadirDpto(Departamento depto) {
+        PreparedStatement ps = null;
+        String anadidoCorrectamente;
+        try {
+            ps = conn.prepareStatement("INSERT INTO departamento(nombre,presupuesto,gastos) VALUES (?,?,?)");
+            ps.setString(1, depto.getNombre());
+            ps.setDouble(2, depto.getPresupuesto());
+            ps.setDouble(3, depto.getGastos());
+            int registrosAfectados = ps.executeUpdate();
+            if (registrosAfectados !=0) {
+                anadidoCorrectamente = "Se ha registrado el departamento";
+            } else {
+                anadidoCorrectamente = "Ha habido algun error al registrar el departamento";
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        return anadidoCorrectamente;
     }
+
 }
