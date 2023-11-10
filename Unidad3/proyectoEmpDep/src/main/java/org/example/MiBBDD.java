@@ -165,6 +165,63 @@ public class MiBBDD {
     }
 
     public void apellidosEmp(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+            rs = query.executeQuery("SELECT apellido1 FROM empleado");
+            System.out.println("Los apellidos son:");
+            while(rs.next()){
+                System.out.println(rs.getString("apellido1"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void apellidosEmpSinRepetir(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+            rs = query.executeQuery("SELECT DISTINCT apellido1 FROM empleado");
+            System.out.println("Los apellidos sin repetir son:");
+            while(rs.next()){
+                System.out.println(rs.getString("apellido1"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void deptMenorGasto(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+            rs = query.executeQuery("SELECT nombre, presupuesto FROM departamento ORDER BY presupuesto LIMIT 2;");
+            System.out.println("Los departamentos son:");
+            while(rs.next()){
+                System.out.println(rs.getString("nombre")+ ", presupuesto: " +rs.getDouble("presupuesto"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void deptPresupuestoMayor150k(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+            rs = query.executeQuery("SELECT nombre, presupuesto FROM departamento WHERE presupuesto >= 150000;");
+            System.out.println("Los departamentos son:");
+            while(rs.next()){
+                System.out.println(rs.getString("nombre")+ ", presupuesto: " +rs.getDouble("presupuesto"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

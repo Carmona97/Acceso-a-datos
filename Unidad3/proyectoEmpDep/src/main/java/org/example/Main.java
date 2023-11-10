@@ -2,14 +2,18 @@ package org.example;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
 
+        Scanner scn = new Scanner(System.in);
+
         boolean conexionIniciada;
         boolean conexionCerrada;
         MiBBDD empresa;
+        int eleccionMenu = 0;
 
         ArrayList<Empleado> listaCompletaEmpleados = new ArrayList<>();
         ArrayList<Empleado> empleadosdpto1 = new ArrayList<>();
@@ -102,6 +106,35 @@ public class Main {
         System.out.println(empresa.anadirEmpleado(emp8));
         System.out.println(empresa.anadirEmpleado(emp9));
         System.out.println(empresa.anadirEmpleado(emp10));
+
+        do {
+            System.out.println("Indique que desea hacer: \n" +
+                    "1. Lista el primer apellido de todos los empleados\n" +
+                    "2. Lista el primer apellido de los empleados eliminando los apellidos que estén repetidos\n" +
+                    "3. Devuelve una lista con el nombre y el gasto de los 2 departamentos que tienen menor gasto\n" +
+                    "4. Devuelve una lista con el nombre de los departamentos y el presupuesto de aquellos que tienen un presupuesto mayor o igual a 150,000 euros\n" +
+                    "5. Devuelve un listado con los empleados y los datos de los departamentos donde trabaja cada uno\n" +
+                    "6. Devuelve un listado con los empleados y los datos de los departamentos donde trabaja cada uno. Ordena el resultado, en primer lugar por el nombre del departamento (en orden alfabético) y en segundo lugar por los apellidos y el nombre de los empleados\n" +
+                    "7. Devuelve un listado con el identificador y el nombre del departamento, solamente de aquellos departamentos que tienen empleados\n" +
+                    "8. Devuelve el nombre del departamento donde trabaja el empleado que tiene el NIF 38382980M\n" +
+                    "9. Calcula la suma del presupuesto de todos los departamentos\n" +
+                    "0. Cerrar la conexion a la base de datos");
+            eleccionMenu = scn.nextInt();
+            switch (eleccionMenu) {
+                case 1 -> empresa.apellidosEmp();
+                case 2 -> empresa.apellidosEmpSinRepetir();
+                case 3 -> empresa.deptMenorGasto();
+                case 4 -> empresa.deptPresupuestoMayor150k();
+                /*case 5 ->
+                case 6 ->
+                case 7 ->
+                case 8 ->
+                case 9 ->
+                    default ->*/
+
+            }
+        } while (eleccionMenu != 0);
+
         conexionCerrada = empresa.cerrarConexion();
         if (conexionCerrada){
             System.out.println("Se ha cerrado la conexion");
