@@ -224,6 +224,87 @@ public class MiBBDD {
         }
 
     }
+    public void empleadosYSusDeptos(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+
+            rs = query.executeQuery("SELECT empleado.nombre AS empNombre, empleado.apellido1 AS empApellido1, empleado.apellido2 AS empApellido2, departamento.nombre AS deptNombre FROM empleado JOIN departamento ON empleado.id_departamento = departamento.id;");
+            System.out.println("Los datos son:");
+            while(rs.next()){
+                System.out.println(rs.getString("empNombre")+" "+rs.getString("empApellido1")+" "+rs.getString("empApellido2")+ ", departamento: " +rs.getString("deptNombre"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void empleadoDetallesDeptoOrdenado(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+
+            rs = query.executeQuery("SELECT empleado.nombre AS empNombre, empleado.apellido1 AS empApellido1, empleado.apellido2 AS empApellido2, departamento.nombre AS deptNombre FROM empleado JOIN departamento ON empleado.id_departamento = departamento.id ORDER BY departamento.nombre, empleado.apellido1, empleado.apellido2;");
+            System.out.println("Los datos son:");
+            while(rs.next()){
+                System.out.println(rs.getString("empNombre")+" "+rs.getString("empApellido1")+" "+rs.getString("empApellido2")+ ", departamento: " +rs.getString("deptNombre"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void deptoConEmpleados(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+
+            rs = query.executeQuery("SELECT id, nombre FROM departamento WHERE id NOT IN (SELECT id_departamento FROM empleado);");
+            System.out.println("Los departamentos son:");
+            while(rs.next()){
+                System.out.println(rs.getString("nombre")+" "+rs.getInt("id"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void empleadoPorNif(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+
+            rs = query.executeQuery("SELECT nombre FROM departamento WHERE id = (SELECT id_departamento FROM empleado WHERE nif = '38382980M');");
+            System.out.println("Los departamentos son:");
+            while(rs.next()){
+                System.out.println(rs.getString("nombre"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public void sumaPresupuestos(){
+        ResultSet rs = null;
+        try {
+            Statement query = conn.createStatement();
+
+            rs = query.executeQuery("SELECT SUM(presupuesto) AS PresupuestoTotal FROM departamento;");
+            System.out.println("El presupuesto total es:");
+            while(rs.next()){
+                System.out.println(rs.getDouble("PresupuestoTotal"));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 
 

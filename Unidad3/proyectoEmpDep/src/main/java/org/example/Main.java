@@ -125,12 +125,12 @@ public class Main {
                 case 2 -> empresa.apellidosEmpSinRepetir();
                 case 3 -> empresa.deptMenorGasto();
                 case 4 -> empresa.deptPresupuestoMayor150k();
-                /*case 5 ->
-                case 6 ->
-                case 7 ->
-                case 8 ->
-                case 9 ->
-                    default ->*/
+                case 5 -> empresa.empleadosYSusDeptos();
+                case 6 -> empresa.empleadoDetallesDeptoOrdenado();
+                case 7 ->empresa.deptoConEmpleados();
+                case 8 -> empresa.empleadoPorNif();
+                case 9 -> empresa.sumaPresupuestos();
+                    default -> System.out.println("El numero introducido es incorrecto, vuelva a introducirlo");
 
             }
         } while (eleccionMenu != 0);

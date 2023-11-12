@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Crea la base de datos y no permite que se dupliquen las filas de las tablas">
+    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Creo la mitad del menú">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MiBBDD.java" afterDir="false" />
@@ -99,7 +99,8 @@
       <workItem from="1699630429264" duration="171000" />
       <workItem from="1699630869365" duration="2970000" />
       <workItem from="1699633921554" duration="6829000" />
-      <workItem from="1699642612411" duration="2623000" />
+      <workItem from="1699642612411" duration="3675000" />
+      <workItem from="1699823176160" duration="3259000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion de las clases del proyecto">
       <option name="closed" value="true" />
@@ -157,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699642637647</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creo la mitad del menú">
+      <option name="closed" value="true" />
+      <created>1699645263837</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699645263837</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +187,8 @@
     <MESSAGE value="Creacion de las clases del proyecto" />
     <MESSAGE value="correccion del tipo idDepartamento" />
     <MESSAGE value="Crea la base de datos y no permite que se dupliquen las filas de las tablas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crea la base de datos y no permite que se dupliquen las filas de las tablas" />
+    <MESSAGE value="Creo la mitad del menú" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creo la mitad del menú" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
