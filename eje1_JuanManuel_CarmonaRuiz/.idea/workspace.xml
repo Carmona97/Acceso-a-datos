@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="23e391d4-c52f-4800-bebf-3cf14a96fca3" name="Changes" comment="Ejercicio1 completo y corregido" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2XA4ZH842Td70X9xWYNjjv8s19E" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Juanma/Desktop/2 DAM/ProyectosIntelliJ/Acceso-a-datos/ExamenUnidad2/eje1_JuanManuel_CarmonaRuiz",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "editing.templates",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23e391d4-c52f-4800-bebf-3cf14a96fca3" name="Changes" comment="" />
+      <created>1698058605104</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698058605104</updated>
+      <workItem from="1698058606130" duration="2167000" />
+      <workItem from="1698060876268" duration="1568000" />
+      <workItem from="1698063485346" duration="446000" />
+      <workItem from="1698409508312" duration="699000" />
+      <workItem from="1698667263490" duration="104000" />
+      <workItem from="1699272179621" duration="1647000" />
+      <workItem from="1699471500595" duration="599000" />
+      <workItem from="1699630250439" duration="43000" />
+      <workItem from="1699630315572" duration="102000" />
+      <workItem from="1700222823713" duration="141000" />
+      <workItem from="1700223139192" duration="1723000" />
+    </task>
+    <task id="LOCAL-00001" summary="Ejercicio1 completo y corregido">
+      <option name="closed" value="true" />
+      <created>1700224545190</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700224545190</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ejercicio1 completo y corregido" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio1 completo y corregido" />
+  </component>
+</project>
