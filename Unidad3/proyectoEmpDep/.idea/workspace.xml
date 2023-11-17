@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Finalizo el programa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Añado metodo insertarEnDepartamento" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +69,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+<<<<<<< Updated upstream
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -75,6 +80,10 @@
     "DatabaseDriversLRU": [
       "postgresql"
     ]
+=======
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> Stashed changes
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -85,6 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699277289454</updated>
+<<<<<<< Updated upstream
       <workItem from="1699277290478" duration="467000" />
       <workItem from="1699341850514" duration="312000" />
       <workItem from="1699342170763" duration="2646000" />
@@ -100,6 +110,14 @@
       <workItem from="1699642612411" duration="3675000" />
       <workItem from="1699823176160" duration="3912000" />
       <workItem from="1700222753193" duration="68000" />
+=======
+      <workItem from="1699277290478" duration="367000" />
+      <workItem from="1699299867027" duration="64000" />
+      <workItem from="1699299939960" duration="242000" />
+      <workItem from="1699309079094" duration="217000" />
+      <workItem from="1699471104937" duration="2000" />
+      <workItem from="1699471419491" duration="79000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Creacion de las clases del proyecto">
       <option name="closed" value="true" />
@@ -117,6 +135,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699277694225</updated>
     </task>
+<<<<<<< Updated upstream
     <task id="LOCAL-00003" summary="Creacion de las clases del proyecto">
       <option name="closed" value="true" />
       <created>1699623074746</created>
@@ -182,6 +201,17 @@
       <updated>1699826494828</updated>
     </task>
     <option name="localTasksCounter" value="11" />
+=======
+    <task id="LOCAL-00003" summary="Añado metodo insertarEnDepartamento">
+      <option name="closed" value="true" />
+      <created>1699471459876</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699471459876</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
