@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Creo la mitad del menú">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+<<<<<<< Updated upstream
+    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Finalizo el programa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="72250b93-69bb-4b71-9525-23cfd0abd0aa" name="Changes" comment="Añado metodo insertarEnDepartamento" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,9 +46,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2XnuhiYQhuyJYxGr0uurRC4gN91" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -62,21 +64,26 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Juanma/Desktop/2 DAM/ProyectosIntelliJ/Acceso-a-datos/Unidad3/proyectoEmpDep",
+    "last_opened_file_path": "C:/Users/Juanma/Desktop/2 DAM/ProyectosIntelliJ/AccesoADatosSinGit/eje1_JuanManuel_CarmonaRuiz",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+<<<<<<< Updated upstream
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "postgresql"
     ]
+=======
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> Stashed changes
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -87,6 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699277289454</updated>
+<<<<<<< Updated upstream
       <workItem from="1699277290478" duration="467000" />
       <workItem from="1699341850514" duration="312000" />
       <workItem from="1699342170763" duration="2646000" />
@@ -100,8 +108,16 @@
       <workItem from="1699630869365" duration="2970000" />
       <workItem from="1699633921554" duration="6829000" />
       <workItem from="1699642612411" duration="3675000" />
-      <workItem from="1699823176160" duration="3288000" />
-      <workItem from="1699875156859" duration="6441000" />
+      <workItem from="1699823176160" duration="3912000" />
+      <workItem from="1700222753193" duration="68000" />
+=======
+      <workItem from="1699277290478" duration="367000" />
+      <workItem from="1699299867027" duration="64000" />
+      <workItem from="1699299939960" duration="242000" />
+      <workItem from="1699309079094" duration="217000" />
+      <workItem from="1699471104937" duration="2000" />
+      <workItem from="1699471419491" duration="79000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Creacion de las clases del proyecto">
       <option name="closed" value="true" />
@@ -119,6 +135,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699277694225</updated>
     </task>
+<<<<<<< Updated upstream
     <task id="LOCAL-00003" summary="Creacion de las clases del proyecto">
       <option name="closed" value="true" />
       <created>1699623074746</created>
@@ -175,7 +192,26 @@
       <option name="project" value="LOCAL" />
       <updated>1699826470625</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finalizo el programa">
+      <option name="closed" value="true" />
+      <created>1699826494828</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699826494828</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+=======
+    <task id="LOCAL-00003" summary="Añado metodo insertarEnDepartamento">
+      <option name="closed" value="true" />
+      <created>1699471459876</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699471459876</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +233,8 @@
     <MESSAGE value="correccion del tipo idDepartamento" />
     <MESSAGE value="Crea la base de datos y no permite que se dupliquen las filas de las tablas" />
     <MESSAGE value="Creo la mitad del menú" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creo la mitad del menú" />
+    <MESSAGE value="Finalizo el programa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizo el programa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
