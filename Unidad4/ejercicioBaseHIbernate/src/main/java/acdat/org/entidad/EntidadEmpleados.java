@@ -7,6 +7,9 @@ public class EntidadEmpleados {
     private Integer depno;
     private EntidadDepartamentos departamentosByDepno;
 
+    public EntidadEmpleados() {
+    }
+
     public int getEmpno() {
         return empno;
     }

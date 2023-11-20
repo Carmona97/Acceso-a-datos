@@ -5,8 +5,12 @@ public class EntidadDepartamentos {
     private String nombre;
     private String ubicacion;
 
+
     public int getDepno() {
         return depno;
+    }
+
+    public EntidadDepartamentos() {
     }
 
     public void setDepno(int depno) {
