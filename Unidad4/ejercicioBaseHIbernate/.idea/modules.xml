@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ACDAT_ActividadFinal.iml" filepath="$PROJECT_DIR$/ACDAT_ActividadFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicioBaseHIbernate.iml" filepath="$PROJECT_DIR$/ejercicioBaseHIbernate.iml" />
     </modules>
   </component>
 </project>
