@@ -31,6 +31,8 @@ public class Main {
         Departamento dpto5 = new Departamento(5, "I+D", 375000, 380000, empleadosdpto5);
         Departamento dpto6 = new Departamento(6, "Proyectos", 0, 0,empleadosdpto6);
         Departamento dpto7 = new Departamento(7, "Publicidad", 0, 1000,empleadosdpto7);
+
+
         Empleado emp1 = new Empleado(1, "32481596F", "Aarón", "Rivero", "Gómez", 1);
         Empleado emp2 = new Empleado(2, "Y5575632D", "Adela", "Salas", "Díaz", 2);
         Empleado emp3 = new Empleado(3, "R6970642B", "Adolfo", "Rubio", "Flores", 3);
@@ -127,7 +129,7 @@ public class Main {
                 case 4 -> empresa.deptPresupuestoMayor150k();
                 case 5 -> empresa.empleadosYSusDeptos();
                 case 6 -> empresa.empleadoDetallesDeptoOrdenado();
-                case 7 ->empresa.deptoConEmpleados();
+                case 7 -> empresa.deptoConEmpleados();
                 case 8 -> empresa.empleadoPorNif();
                 case 9 -> empresa.sumaPresupuestos();
                     default -> System.out.println("El numero introducido es incorrecto, vuelva a introducirlo");
