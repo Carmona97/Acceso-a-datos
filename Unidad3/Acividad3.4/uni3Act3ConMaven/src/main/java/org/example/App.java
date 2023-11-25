@@ -13,19 +13,6 @@ public class App {
         String user = "postgres";
         String pass = "123";
         Connection conn = DriverManager.getConnection(url, user, pass);
-        PreparedStatement ps = null;
-        String anadidoCorrectamente;
-        try {
-            ps = conn.prepareStatement("INSERT INTO asignatura(nombre,anyo) VALUES (?,?)");
-            ps.setString(1, "Lenguaje de marcas");
-            ps.setInt(2, 1);
-            int registrosAfectados = ps.executeUpdate();
-            if (registrosAfectados !=0) {
-                System.out.println("Se ha añadido el registro correctamente ");
-            }
-        } catch (SQLException e) {
-            System.out.println("Ha habido algun error al registrar la asignatura");
-        }
         Statement statement = conn.createStatement();
         String SQLsentence = "SELECT * FROM asignatura ORDER BY codigo";
         ResultSet rs = statement.executeQuery(SQLsentence);
