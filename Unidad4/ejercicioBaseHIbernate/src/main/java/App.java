@@ -1,11 +1,5 @@
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
-
-
-/**
- * Hello world!
- *
- */
 public class App 
 {
     static Session abrirSession() throws Exception{
