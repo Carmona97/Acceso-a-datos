@@ -1,5 +1,12 @@
 package org.acdat.negocio;
 
+import org.acdat.jdbc.DestinoDao;
+import org.acdat.jdbc.MiJDBC;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Destino {
     protected int id;
     protected String destino;
@@ -11,6 +18,9 @@ public class Destino {
         this.destino = destino;
         this.descripcion = descripcion;
         this.coste = coste;
+    }
+    public Destino(){
+
     }
 
     public int getId() {
@@ -78,5 +88,104 @@ public class Destino {
                 ", descripcion='" + descripcion + '\'' +
                 ", coste=" + coste +
                 '}';
+    }
+
+    public String mostrarDestinos() throws SQLException {
+        String respuesta = "";
+        List<Destino> destinoList = new ArrayList<>();
+
+        MiJDBC miJDBC = new MiJDBC();
+        miJDBC.abrirConexion();
+        DestinoDao destinoDao = new DestinoDao();
+
+        destinoList = destinoDao.mostrarDestinos(miJDBC.getConnection());
+
+        for (Destino destino : destinoList) {
+            respuesta = respuesta + "\n" + destino.toString();
+        }
+
+        return respuesta;
+    }
+
+    public boolean agregarDestino() throws SQLException {
+        boolean respuesta = false;
+        DestinoDao destinoDao = new DestinoDao();
+        MiJDBC miJDBC = new MiJDBC();
+
+        if (miJDBC.abrirConexion()) {
+            respuesta = destinoDao.agregarDestino(miJDBC.getConnection(), this);
+        }
+        return respuesta;
+    }
+
+    public boolean actualizarDestino() throws SQLException {
+        boolean respuesta = false;
+        DestinoDao destinoDao = new DestinoDao();
+        MiJDBC miJDBC = new MiJDBC();
+
+        if (miJDBC.abrirConexion()) {
+            respuesta = destinoDao.actualizarDestino(miJDBC.getConnection(), this);
+        }
+        return respuesta;
+    }
+    public boolean cargarDestino() throws SQLException {
+        boolean respuesta = false;
+        Destino destino = new Destino();
+        DestinoDao destinoDao = new DestinoDao();
+        MiJDBC miJDBC = new MiJDBC();
+
+        if (miJDBC.abrirConexion()) {
+            destino = destinoDao.cargarDestino(miJDBC.getConnection(), this.id);
+            this.id = destino.id;
+            this.destino = destino.destino;
+            this.descripcion = destino.descripcion;
+            this.coste = destino.coste;
+            respuesta = true;
+        }
+
+        return respuesta;
+    }
+
+    public boolean existeDestino() throws SQLException {
+        boolean respuesta = false;
+        DestinoDao destinoDao = new DestinoDao();
+        MiJDBC miJDBC = new MiJDBC();
+
+        if (miJDBC.abrirConexion()) {
+            respuesta = destinoDao.existeDestino(miJDBC.getConnection(), this.id);
+        }
+
+        return respuesta;
+    }
+
+    public boolean eliminarDestino() throws SQLException {
+        boolean respuesta = false;
+        DestinoDao destinoDao = new DestinoDao();
+        MiJDBC miJDBC = new MiJDBC();
+
+        if (miJDBC.abrirConexion()) {
+            respuesta = destinoDao.eliminarDestino(miJDBC.getConnection(), this.id);
+        }
+        return respuesta;
+    }
+
+    public void crearTablaDestino() {
+        MiJDBC miJDBC = new MiJDBC();
+        DestinoDao destinoDao = new DestinoDao();
+        boolean conexionCorrecta = miJDBC.abrirConexion();
+
+        if (conexionCorrecta) {
+            destinoDao.crearTablaDestino(miJDBC.getConnection());
+        }
+    }
+
+    public void eliminarTablaDestino() {
+        MiJDBC miJDBC = new MiJDBC();
+        DestinoDao destinoDao = new DestinoDao();
+        boolean conexionCorrecta = miJDBC.abrirConexion();
+
+        if (conexionCorrecta) {
+            destinoDao.eliminarTablaDestino(miJDBC.getConnection());
+        }
     }
 }

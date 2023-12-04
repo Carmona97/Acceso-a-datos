@@ -10,7 +10,7 @@ public class AgenciaDao {
     public List<Agencia> mostrarAgencia(Connection connection){
         List<Agencia> agenciaList = new ArrayList<Agencia>();
         Agencia agencia = null;
-        String sql = "SELECT * FROM agencia";
+        String sql = "SELECT * FROM agencias";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
             //System.out.println("ID\tNombre\t\tCorreo\t\tTeléfono");
@@ -34,7 +34,7 @@ public class AgenciaDao {
     public boolean agregarAgencia(Connection connection,  Agencia agencia) throws SQLException {
         boolean respuesta = false;
         int res = 0;
-        String sql = "INSERT INTO agencia (nombre_agencia, direccion_agencia, telefono_agencia) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO agencias (nombre_agencia, direccion_agencia, telefono_agencia) VALUES (?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, agencia.getNombre());
             preparedStatement.setString(2, agencia.getDireccion());
@@ -52,7 +52,7 @@ public class AgenciaDao {
         boolean respuesta = false;
         int res = 0;
 
-        String sql = "UPDATE agencia SET nombre_agencia=?, direccion_agencia=?, telefono_agencia=? WHERE agencia_id=?";
+        String sql = "UPDATE agencias SET nombre_agencia=?, direccion_agencia=?, telefono_agencia=? WHERE agencia_id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, agencia.getNombre());
             preparedStatement.setString(2, agencia.getDireccion());
@@ -71,7 +71,7 @@ public class AgenciaDao {
     public Agencia cargarAgencia (Connection connection, int id) throws SQLException {
 
         Agencia agencia = null;
-        String sql = "SELECT * FROM agencia WHERE agencia_id = " + id;
+        String sql = "SELECT * FROM agencias WHERE agencia_id = " + id;
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
             //System.out.println("ID\tNombre\t\tCorreo\t\tTeléfono");
@@ -110,7 +110,7 @@ public class AgenciaDao {
         boolean respuesta = false;
         int res = 0;
 
-        String sql = "DELETE FROM clientes WHERE cliente_id=?";
+        String sql = "DELETE FROM agencias WHERE agencia_id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, agenciaId);
             res = preparedStatement.executeUpdate();

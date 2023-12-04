@@ -31,10 +31,11 @@ public class App
             menu =scn.nextInt();
             switch (menu){
                 case 1 -> {
-                    boolean cargadoConExito = false;
-                    cargadoConExito = cliente.precargarClientes();
-                    cargadoConExito = agencia.precargarAgencias();
-                    if(cargadoConExito){
+                    boolean cargadoConExitoClientes = false;
+                    boolean cargadoConExitoAgencias = false;
+                    cargadoConExitoClientes = cliente.precargarClientes();
+                    cargadoConExitoAgencias = agencia.precargarAgencias();
+                    if(cargadoConExitoClientes && cargadoConExitoAgencias){
                         System.out.println("Se han cargado los datos con exito");
                     }
                 }
