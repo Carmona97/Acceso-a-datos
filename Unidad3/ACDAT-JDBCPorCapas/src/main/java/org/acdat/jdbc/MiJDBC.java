@@ -66,6 +66,20 @@ public class MiJDBC {
     public void IniciarTransaccion() {
         try {
             connection.setAutoCommit(false);
+/*            try(Connection conn = DriverManager.getConnection(url, user, pass)){
+
+                CallableStatement cStatement = conn.prepareCall("{call PROCEDIMIENTO}");
+                ResultSet rs = cStatement.executeQuery();
+                while(rs.next()){
+                    System.out.println(rs.getString(1)+" "+rs.getString(2));
+                }
+                commitTransaccion()
+
+            }catch (SQLException e){
+                rollbackTransaccion();
+                e.printStackTrace();
+
+            }*/
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
