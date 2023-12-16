@@ -1,7 +1,4 @@
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import java.io.*;
-import java.util.InputMismatchException;
+import java.io.IOException;
 import java.util.Scanner;
 
 /*
@@ -33,7 +30,7 @@ public class Main {
 
             //MENU
 
-            System.out.println("Indique que desea hacer:" + "\n1.Añadir jugador" + "\n2.Ver los jugadores añadidos" + "\n3.Buscar un jugador de la lista" + "\n4.Guardarlo en un fichero" + "\nPulse 0 para cerrar el programa");
+            System.out.println("Indique que desea hacer:" + "\n1.Añadir jugador" + "\n2.Ver los jugadores añadidos" + "\n3.Buscar un jugador de la lista" + "\nPulse 0 para cerrar el programa");
             num = scn.nextInt();
             scn.nextLine();
             switch (num) {
@@ -52,6 +49,7 @@ public class Main {
                     scn.nextLine();
                     System.out.println("añadir descripcion");
                     descripcion = scn.nextLine();
+                    scn.nextLine();
                     Jugador nuevo = new Jugador(nombre, apodo, puesto, dorsal, descripcion);
                     Jugadores.jugadores.add(nuevo);
                 }

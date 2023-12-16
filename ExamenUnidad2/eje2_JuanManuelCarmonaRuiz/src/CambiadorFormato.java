@@ -1,8 +1,9 @@
-import java.io.*;
-import java.util.ArrayList;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.*;
+import java.util.ArrayList;
 
 public class CambiadorFormato implements Serializable {
 
@@ -29,12 +30,12 @@ public class CambiadorFormato implements Serializable {
     }
 
     public Jugadores cargarXml() {
-        Jugadores jugadores;
+        Jugadores jugadores = null;
         try {
 
             JAXBContext context = JAXBContext.newInstance(Jugadores.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            jugadores = (Jugadores) unmarshaller.unmarshal(new File(rutaXml));
+            jugadores = (Jugadores) ((Unmarshaller) unmarshaller).unmarshal(new File(xmlRuta));
         } catch (JAXBException e) {
             e.printStackTrace();
         }
@@ -53,9 +54,9 @@ public class CambiadorFormato implements Serializable {
 
     public Jugadores cargarArchivo() {
         Jugadores jugadores = new Jugadores();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ficheroRuta))) {
-            jugadores = (Jugadores) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ficheroRuta))) {
+            oos.writeObject(jugadores);
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return jugadores;

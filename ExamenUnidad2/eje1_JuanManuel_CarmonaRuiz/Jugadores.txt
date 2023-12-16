@@ -1,2 +1,1 @@
-Jugador{nombre='a', apodo='a', puesto='a', dorsal=23, descripcion='as'}
-Jugador{nombre='asd', apodo='zc', puesto='bfg', dorsal=3, descripcion='sdfdsf'}
+Jugador{nombre='a', apodo='a', puesto='a', dorsal=12, descripcion='sa'}
