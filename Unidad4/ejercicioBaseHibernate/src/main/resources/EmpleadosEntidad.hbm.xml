@@ -8,7 +8,7 @@
         <id name="empno" column="empno"/>
         <property name="nombre" column="nombre"/>
         <property name="puesto" column="puesto"/>
-        <property name="depno" column="depno"/>
+        <property name="depno" column="depno" insert="false" update="false"/>
         <many-to-one name="departamentosByDepno" class="acdat.org.entidad.DepartamentosEntidad">
             <column name="depno" not-null="true"/>
         </many-to-one>

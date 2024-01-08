@@ -70,4 +70,12 @@ public class EmpleadosEntidad {
     public void setDepartamentosByDepno(DepartamentosEntidad departamentosByDepno) {
         this.departamentosByDepno = departamentosByDepno;
     }
+
+    @Override
+    public String toString() {
+        return "empno=" + empno +
+                ", nombre=" + nombre +
+                ", puesto=" + puesto +
+                ", depno=" + depno;
+    }
 }
