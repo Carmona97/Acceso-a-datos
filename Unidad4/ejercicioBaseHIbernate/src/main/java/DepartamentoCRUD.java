@@ -1,4 +1,5 @@
 import acdat.org.entidad.DepartamentosEntidad;
+import acdat.org.entidad.EmpleadosEntidad;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -10,10 +11,22 @@ public class DepartamentoCRUD {
     public static void mostrarDepartamentos(Session miSession) {
         Query<DepartamentosEntidad> miQuery = miSession.createQuery("from acdat.org.entidad.DepartamentosEntidad");
         List<DepartamentosEntidad> listaDepartamentos = miQuery.list();
+
         for (DepartamentosEntidad departamento : listaDepartamentos) {
             System.out.println("Departamento: " + departamento.getNombre() + ", Numero: " + departamento.getDepno());
+
+            Query<EmpleadosEntidad> empleadosQuery = miSession.createQuery("from acdat.org.entidad.EmpleadosEntidad where depno = :depno");
+            empleadosQuery.setParameter("depno", departamento.getDepno());
+            List<EmpleadosEntidad> empleadosDepartamento = empleadosQuery.list();
+
+            for (EmpleadosEntidad empleado : empleadosDepartamento) {
+                System.out.println("Empleado: " + empleado.getNombre() + ", Numero: " + empleado.getEmpno());
+            }
+
+            System.out.println();
         }
     }
+
 
     public static boolean actualizarDepartamento(Session miSession, int depno, String nuevoNombre, String nuevaUbicacion) {
         Query<DepartamentosEntidad> miQuery = miSession.createQuery("from acdat.org.entidad.DepartamentosEntidad where depno = :depno");
