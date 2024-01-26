@@ -1,15 +1,12 @@
 package org.acdat.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class MiJDBC {
     protected String driver;
     protected String url;
     protected String user;
-    protected String password;
+    protected String pass;
     protected Connection connection;
 
     public Connection getConnection() {
@@ -18,16 +15,16 @@ public class MiJDBC {
 
     public MiJDBC() {
         this.driver = "org.postgresql.Driver";
-        this.url = "jdbc:postgresql://localhost:5432/bbddViajes";
+        this.url = "jdbc:postgresql://localhost:5432/TuViajeFinDeCurso";
         this.user = "postgres";
-        this.password = "123";
+        this.pass = "123";
     }
 
     public boolean abrirConexion() {
         boolean respuesta = true;
         try {
             Class.forName(driver);
-            connection = DriverManager.getConnection(url,user,password);
+            connection = DriverManager.getConnection(url,user, pass);
         } catch (SQLException e) {
             respuesta = false;
             System.out.println("Error de conexión");
@@ -66,20 +63,17 @@ public class MiJDBC {
     public void IniciarTransaccion() {
         try {
             connection.setAutoCommit(false);
-/*            try(Connection conn = DriverManager.getConnection(url, user, pass)){
+            try(Connection conn = DriverManager.getConnection(url, user, pass)){
 
-                CallableStatement cStatement = conn.prepareCall("{call PROCEDIMIENTO}");
-                ResultSet rs = cStatement.executeQuery();
-                while(rs.next()){
-                    System.out.println(rs.getString(1)+" "+rs.getString(2));
-                }
-                commitTransaccion()
+                CallableStatement cStatement = conn.prepareCall("{call this}");
+                cStatement.execute();
+                commitTransaccion();
 
             }catch (SQLException e){
                 rollbackTransaccion();
                 e.printStackTrace();
 
-            }*/
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

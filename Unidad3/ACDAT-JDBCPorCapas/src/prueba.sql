@@ -3,7 +3,8 @@ drop table if exists destinos_agencias;
 drop table if exists destinos;
 drop table if exists clientes;
 drop table if exists agencias;
-
+drop table if exists vuelos;
+drop table if exists clientes_vuelos;
 
 -- Crear la tabla de destinos
 CREATE TABLE destinos (
@@ -161,3 +162,41 @@ FROM destinos d
          JOIN destinos_agencias da ON d.destino_id = da.destino_id
 GROUP BY d.nombre_destino
 HAVING COUNT(da.agencia_id) >= 2;
+
+-- Crear tabla de vuelos
+CREATE TABLE vuelos (
+                        vuelo_id SERIAL PRIMARY KEY,
+                        origen VARCHAR(50),
+                        destino VARCHAR(50),
+                        fecha_salida DATE,
+                        fecha_llegada DATE,
+                        costo NUMERIC(10, 2)
+);
+
+-- Crear tabla de relación muchos a muchos entre clientes y vuelos
+CREATE TABLE clientes_vuelos (
+                                 cliente_id INTEGER REFERENCES clientes(cliente_id),
+                                 vuelo_id INTEGER REFERENCES vuelos(vuelo_id),
+                                 PRIMARY KEY (cliente_id, vuelo_id)
+);
+
+-- Insertar algunos vuelos
+INSERT INTO vuelos (origen, destino, fecha_salida, fecha_llegada, costo) VALUES
+                                                                             ('Ciudad A', 'Ciudad B', '2023-12-01', '2023-12-05', 500.00),
+                                                                             ('Ciudad C', 'Ciudad D', '2023-12-10', '2023-12-15', 700.00),
+                                                                             ('Ciudad E', 'Ciudad F', '2023-12-20', '2023-12-25', 900.00);
+
+-- Insertar algunos clientes y sus vuelos contratados
+INSERT INTO clientes (nombre_cliente, correo_cliente, telefono_cliente) VALUES
+                                                                            ('Juan Pérez', 'juan@email.com', '+123456789'),
+                                                                            ('Ana López', 'ana@email.com', '+987654321');
+
+INSERT INTO clientes_vuelos (cliente_id, vuelo_id) VALUES
+                                                       (1, 1), (1, 2),
+                                                       (2, 2), (2, 3);
+
+-- Encuentra los vuelos contratados por los clientes con el nombre del cliente
+SELECT c.nombre_cliente, v.*
+FROM vuelos v
+         JOIN clientes_vuelos cv ON v.vuelo_id = cv.vuelo_id
+         JOIN clientes c ON cv.cliente_id = c.cliente_id;

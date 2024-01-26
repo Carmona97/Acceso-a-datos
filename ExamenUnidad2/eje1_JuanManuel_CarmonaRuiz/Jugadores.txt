@@ -1,0 +1,1 @@
+Jugador{nombre='a', apodo='a', puesto='a', dorsal=1, descripcion='s'}

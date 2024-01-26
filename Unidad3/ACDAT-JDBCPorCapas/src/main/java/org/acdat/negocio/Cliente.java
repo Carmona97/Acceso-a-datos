@@ -210,7 +210,7 @@ public class Cliente {
                 "                                                                            ('Laura Torres', 'laura@email.com', '+9876543210'),\n" +
                 "                                                                            ('Roberto Herrera', 'roberto@email.com', '+8765432109'),\n" +
                 "                                                                            ('Silvia Castro', 'silvia@email.com', '+7654321098'),\n" +
-                "                                                                            ('Juan García', 'juan@email.com', '+6543210987'),\n" +
+                "                                                                            ('Curro García', 'Curro@email.com', '+6543210987'),\n" +
                 "                                                                            ('Carmen Ruiz', 'carmen@email.com', '+5432109876'),\n" +
                 "                                                                            ('Fernando Méndez', 'fernando@email.com', '+4321098765'),\n" +
                 "                                                                            ('Sara Vargas', 'sara@email.com', '+3210987654'),\n" +
@@ -234,7 +234,7 @@ public class Cliente {
                 "                                                                            ('Jorge Gallego', 'jorge@email.com', '+3210987654'),\n" +
                 "                                                                            ('Natalie Rojas', 'natalie@email.com', '+2109876543'),\n" +
                 "                                                                            ('Gabriel Gil', 'gabriel@email.com', '+1098765432'),\n" +
-                "                                                                            ('Ana Rosa', 'anarosa@email.com', '+9876543210'),\n" +
+                "                                                                            ('Pepita', 'pepita@email.com', '+9876543210'),\n" +
                 "                                                                            ('Manuel Mora', 'manuel@email.com', '+8765432109'),\n" +
                 "                                                                            ('Rosa Serrano', 'rosa@email.com', '+7654321098'),\n" +
                 "                                                                            ('Hugo Guerra', 'hugo@email.com', '+6543210987'),\n" +

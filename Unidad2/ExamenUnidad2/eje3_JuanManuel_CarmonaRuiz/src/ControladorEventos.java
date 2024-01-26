@@ -27,21 +27,26 @@ public class ControladorEventos extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
 
-        if (qName.equals("Título") && !contenido.equals("null")) {
+        if (qName.equals("Título")) {
             titulo="Titulo " + contenido;
-        } else if (qName.equals("Semilla") && !contenido.equals("null")) {
+        }
+        if (qName.equals("Semilla")) {
             semilla+="Semilla " + contenido ;
-        } else if (qName.equals("Palabras_clave") && !contenido.equals("null")) {
+        }
+        if (qName.equals("Palabras_clave")) {
             palabrasClave+="Palabras " + contenido ;
-        } else if (qName.equals("Estado") && !contenido.equals("null")) {
+        }
+        if (qName.equals("Estado")) {
             activo = false;
             if(contenido.equals("Activa")){
                 estado+="Estado "+contenido;
                 activo =true;
             }
-        } else if (qName.equals("item") && !contenido.equals("null")) {
-            if(activo = true){
+        }
+        if (qName.equals("item")) {
+            if(activo == true){
                 System.out.println(titulo+" "+semilla+" "+palabrasClave+" "+estado);
+                activo = false;
             }
         }
 

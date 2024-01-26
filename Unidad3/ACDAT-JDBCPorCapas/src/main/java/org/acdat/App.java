@@ -3,8 +3,10 @@ package org.acdat;
 import org.acdat.jdbc.MiJDBC;
 import org.acdat.negocio.Agencia;
 import org.acdat.negocio.Cliente;
+import org.acdat.negocio.Vuelo;
 import org.acdat.vista.VistaAgencia;
 import org.acdat.vista.VistaCliente;
+import org.acdat.vista.VistaVuelo;
 
 import java.nio.charset.MalformedInputException;
 import java.sql.SQLException;
@@ -21,8 +23,11 @@ public class App
         int menu = 0;
         Agencia agencia = new Agencia();
         Cliente cliente = new Cliente();
+        Vuelo vuelo = new Vuelo();
+        vuelo.eliminarTablaVuelo();
         cliente.eliminarTablaCliente();
         agencia.eliminarTablaAgencia();
+        vuelo.crearTablaVuelo();
         agencia.crearTablaAgencia();
         cliente.crearTablaCliente();
 
@@ -33,9 +38,11 @@ public class App
                 case 1 -> {
                     boolean cargadoConExitoClientes = false;
                     boolean cargadoConExitoAgencias = false;
+                    boolean cargadoConExitoVuelos = false;
                     cargadoConExitoClientes = cliente.precargarClientes();
                     cargadoConExitoAgencias = agencia.precargarAgencias();
-                    if(cargadoConExitoClientes && cargadoConExitoAgencias){
+                    cargadoConExitoVuelos = vuelo.precargarVuelos();
+                    if(cargadoConExitoClientes && cargadoConExitoAgencias && cargadoConExitoVuelos){
                         System.out.println("Se han cargado los datos con exito");
                     }
                 }
@@ -49,9 +56,10 @@ public class App
         }while(menu <1 || menu >2);
         VistaCliente vistaCliente = new VistaCliente();
         VistaAgencia vistaAgencia = new VistaAgencia();
+        VistaVuelo vistaVuelo = new VistaVuelo();
 
         do {
-            System.out.println("Seleccione (1) si quiere modificar la vista de Clientes.\nSeleccione (2) si quiere modificar la vista de Agencia\n(0) Para salir ");
+            System.out.println("Seleccione (1) si quiere modificar la vista de Clientes.\nSeleccione (2) si quiere modificar la vista de Agencia\nSeleccione (3) si quiere modificar la vista de Vuelos\n(0) Para salir ");
             menu = scn.nextInt();
             switch (menu){
                 case 1 -> {
@@ -59,6 +67,9 @@ public class App
                 }
                 case 2 -> {
                     vistaAgencia.crudAgencia();
+                }
+                case 3 -> {
+                    vistaVuelo.crudVuelo();
                 }
                 case 0 -> {
                     System.out.println("Saliendo del programa");
