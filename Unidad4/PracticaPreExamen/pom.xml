@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>ejercicioHibernateJPA</artifactId>
+  <artifactId>PracticaPreExamen</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>ejercicioHibernateJPA</name>
+  <name>PracticaPreExamen</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -21,25 +21,34 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.6.0</version>
     </dependency>
-
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>6.4.0.Final</version>
-      <type>pom</type>
+      <version>6.0.0.Final</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
     <dependency>
-      <groupId>org.hibernate.orm</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>6.4.0.Final</version>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging</artifactId>
+      <version>3.5.3.Final</version>
     </dependency>
-
   </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
