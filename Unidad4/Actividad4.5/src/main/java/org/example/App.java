@@ -1,5 +1,7 @@
 package org.example;
 
+import entidades.Articulo;
+import entidades.Comprador;
 import entidades.Concesionario;
 import entidades.Vehiculo;
 import org.hibernate.*;
@@ -28,6 +30,7 @@ public class App
 
             Concesionario concesionarioCreado = agregarConcesionario(transaccion,miSession);
             agregar3Coches(concesionarioCreado,vehiculosConcesionario,transaccion,miSession);
+            realizarVenta(miSession,transaccion);
 
         }catch (Exception e){
             e.printStackTrace();
@@ -85,6 +88,22 @@ public class App
 
         }
         transaccion.commit();
+    }
+
+    public static void realizarVenta(Session miSession,Transaction transaccion){
+        transaccion = miSession.beginTransaction();
+        Comprador nuevoComprador = new Comprador();
+        Articulo nuevoArticulo = new Articulo();
+        nuevoComprador.setNombre("Juanma");
+        nuevoComprador.setTelefono("112233456");
+        nuevoArticulo.setDescripcion("Bueno,bonito,barato");
+        nuevoArticulo.setPrecioVenta(10);
+        nuevoArticulo.setArticulos(nuevoComprador);
+        nuevoComprador.setEsCompradoPor(nuevoArticulo);
+        miSession.persist(nuevoComprador);
+        miSession.persist(nuevoArticulo);
+        transaccion.commit();
+
     }
 
 }

@@ -13,6 +13,9 @@
     <mapping class="entidades.Usuario"/>
     <mapping class="entidades.Vehiculo"/>
     <mapping class="entidades.Concesionario"/>
+    <mapping class="entidades.Comprador"/>
+    <mapping class="entidades.Articulo"/>
+    <mapping class="entidades.Venta"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

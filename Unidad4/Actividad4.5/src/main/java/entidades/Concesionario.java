@@ -9,22 +9,22 @@ import java.util.List;
 public class Concesionario {
     @Id
     @Column(name="nombreComercial",nullable = false)
-    protected String nombreComercial;
+    private String nombreComercial;
 
     @Column(name = "nombreEmpresarial")
-    protected String nombreEmpresarial;
+    private String nombreEmpresarial;
 
     @Column(name = "direccionConcesionario", nullable = false)
-    protected String direccionConcesionario;
+    private String direccionConcesionario;
 
     @Column(name = "numTrabajadores")
-    protected int numTrabajadores;
+    private int numTrabajadores;
 
     @Column(name = "email")
-    protected String email;
+    private String email;
 
     @OneToMany(mappedBy = "concesionarioEnPropiedad", cascade = CascadeType.ALL)
-    protected List<Vehiculo> vehiculosEnVenta;
+    private List<Vehiculo> vehiculosEnVenta;
 
     public Concesionario() {
     }
