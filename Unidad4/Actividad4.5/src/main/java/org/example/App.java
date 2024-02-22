@@ -28,8 +28,8 @@ public class App
         ArrayList<Vehiculo> vehiculosConcesionario = new ArrayList<>();
         try {
 
-            Concesionario concesionarioCreado = agregarConcesionario(transaccion,miSession);
-            agregar3Coches(concesionarioCreado,vehiculosConcesionario,transaccion,miSession);
+/*            Concesionario concesionarioCreado = agregarConcesionario(transaccion,miSession);
+            agregar3Coches(concesionarioCreado,vehiculosConcesionario,transaccion,miSession);*/
             realizarVenta(miSession,transaccion);
 
         }catch (Exception e){
@@ -56,7 +56,7 @@ public class App
         if (miSession != null) {
             System.out.println("Se ha iniciado la sesión");
             transaccion = miSession.beginTransaction();
-            nuevoConcesionario.setNombreComercial("Llabadaba");
+            nuevoConcesionario.setNombreComercial("Llabadabas");
             nuevoConcesionario.setNombreEmpresarial("Empresa5");
             nuevoConcesionario.setEmail("Concesionario5@gmail.com");
             nuevoConcesionario.setNumTrabajadores(2330);
@@ -91,18 +91,27 @@ public class App
     }
 
     public static void realizarVenta(Session miSession,Transaction transaccion){
-        transaccion = miSession.beginTransaction();
-        Comprador nuevoComprador = new Comprador();
-        Articulo nuevoArticulo = new Articulo();
-        nuevoComprador.setNombre("Juanma");
-        nuevoComprador.setTelefono("112233456");
-        nuevoArticulo.setDescripcion("Bueno,bonito,barato");
-        nuevoArticulo.setPrecioVenta(10);
-        nuevoArticulo.setArticulos(nuevoComprador);
-        nuevoComprador.setEsCompradoPor(nuevoArticulo);
-        miSession.persist(nuevoComprador);
-        miSession.persist(nuevoArticulo);
-        transaccion.commit();
+        try {
+            transaccion = miSession.beginTransaction();
+
+            Comprador nuevoComprador = new Comprador();
+            nuevoComprador.setNombre("Juanma");
+            nuevoComprador.setTelefono("112233456");
+            miSession.persist(nuevoComprador);
+
+            Articulo nuevoArticulo = new Articulo();
+            nuevoArticulo.setDescripcion("Bueno, bonito, barato");
+            nuevoArticulo.setPrecioVenta(10);
+            nuevoArticulo.setArticulos(nuevoComprador);
+            miSession.persist(nuevoArticulo);
+
+            transaccion.commit();
+        } catch (Exception e) {
+            if (transaccion != null) {
+                transaccion.rollback();
+            }
+            e.printStackTrace();
+        }
 
     }
 

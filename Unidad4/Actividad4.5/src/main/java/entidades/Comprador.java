@@ -3,6 +3,7 @@ package entidades;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Compradores",schema = "public",catalog = "ventaDeCoches")
@@ -21,7 +22,11 @@ public class Comprador {
 
     @Column(name = "esCompradoPor")
     @ManyToMany(mappedBy = "articulos")
-    private ArrayList<Articulo> esCompradoPor;
+    private List<Articulo> esCompradoPor;
+
+    public Comprador() {
+        this.esCompradoPor = new ArrayList<>();
+    }
 
     public int getIdComprador() {
         return idComprador;
@@ -47,7 +52,7 @@ public class Comprador {
         this.telefono = telefono;
     }
 
-    public ArrayList<Articulo> getEsCompradoPor() {
+    public List<Articulo> getEsCompradoPor() {
         return esCompradoPor;
     }
 
