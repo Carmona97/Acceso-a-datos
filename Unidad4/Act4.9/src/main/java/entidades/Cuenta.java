@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 
-@Entity
-@Inheritance(strategy= InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 public class Cuenta implements Serializable {
 
 

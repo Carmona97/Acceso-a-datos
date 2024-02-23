@@ -11,7 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Table_per_class");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("MappedClass");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         try{
