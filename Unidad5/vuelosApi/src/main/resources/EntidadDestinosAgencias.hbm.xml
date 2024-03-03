@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.acdat.springboot.demo.modelo.EntidadDestinosAgencias" table="destinos_agencias" schema="public"
+           catalog="vuelos">
+        <composite-id mapped="true" class="com.acdat.springboot.demo.modelo.EntidadDestinosAgenciasPK">
+            <key-property name="destinoId">
+                <column name="destino_id" sql-type="integer"/>
+            </key-property>
+            <key-property name="agenciaId">
+                <column name="agencia_id" sql-type="integer"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

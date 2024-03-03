@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.acdat.springboot.demo.modelo.EntidadDestinos" table="destinos" schema="public" catalog="vuelos">
+        <id name="destinoId">
+            <column name="destino_id" sql-type="integer"/>
+        </id>
+        <property name="nombreDestino">
+            <column name="nombre_destino" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="descripcion">
+            <column name="descripcion" sql-type="text" not-null="true"/>
+        </property>
+        <property name="costoEstadia">
+            <column name="costo_estadia" sql-type="numeric" precision="-1" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
