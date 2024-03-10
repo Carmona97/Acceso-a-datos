@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.example.Entidades.EntidadLibros" table="libros" schema="public" catalog="Prestamos">
+        <id name="idLibro">
+            <column name="id_libro" sql-type="integer"/>
+        </id>
+        <property name="titulo">
+            <column name="titulo" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="idAutor">
+            <column name="id_autor" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="genero">
+            <column name="genero" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="anioPublicacion">
+            <column name="anio_publicacion" sql-type="integer" not-null="true"/>
+        </property>
+        <many-to-one name="autoresByIdAutor" class="org.example.Entidades.EntidadAutores">
+            <column name="id_autor" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

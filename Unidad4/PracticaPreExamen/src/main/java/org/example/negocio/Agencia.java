@@ -154,21 +154,4 @@ public class Agencia {
     }
 
 
-
-    public boolean precargarAgencias() throws SQLException{
-        boolean respuesta = false;
-        String sql = "INSERT INTO agencias (nombre_agencia, direccion_agencia, telefono_agencia) VALUES\n" +
-                "                                                                               ('Viajes Fantásticos', 'Calle Principal 123', '+999888777'),\n" +
-                "                                                                               ('Aventuras Globales', 'Avenida Central 456', '+333222111'),\n" +
-                "                                                                               ('Destinos Soñados', 'Plaza de la Libertad 789', '+555444333'),\n" +
-                "                                                                               ('Mundo Viajero', 'Calle Viajera 101', '+777666555'),\n" +
-                "                                                                               ('Turismo Excelente', 'Avenida de los Sueños 202', '+888777666'),\n" +
-                "                                                                               ('Rutas Inolvidables', 'Paseo del Descanso 303', '+111000999'),\n" +
-                "                                                                               ('Viajes y Más', 'Carrera Aventurera 505', '+222111000'),\n" +
-                "                                                                               ('Explora el Mundo', 'Rincón del Viajero 606', '+444333222'),\n" +
-                "                                                                               ('Destinos Únicos', 'Calle de la Aventura 707', '+666555444'),\n" +
-                "                                                                               ('Aventuras Extremas', 'Plaza del Viajero 808', '+000999888');";
-
-        return respuesta;
-    }
 }
