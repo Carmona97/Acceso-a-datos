@@ -1,10 +1,12 @@
 package org.example.Entidades;
 
 import jakarta.persistence.*;
+import org.example.Negocio.Prestamo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,7 +29,7 @@ public class EntidadPrestamos {
     @Column(name = "id_usuario", nullable = true)
     private Integer idUsuario;
     @ManyToOne
-    @JoinColumn(name = "id_libro", referencedColumnName = "id_libro")
+    @JoinColumn(name = "id_libro", referencedColumnName = "id_libro",insertable = false, updatable=false)
     private EntidadLibros librosByIdLibro;
 
     public int getIdPrestamo() {
@@ -78,7 +80,28 @@ public class EntidadPrestamos {
         this.librosByIdLibro = librosByIdLibro;
     }
 
-    public boolean agregarPrestamo(EntidadPrestamos prestamo) {
+    public ArrayList<Prestamo> mostrarPrestamosPersistencia() throws Exception {
+        ArrayList<Prestamo> listaPrestamosLogica = new ArrayList<>();
+
+        try (Session miSesion = JPAPersistencia.abrirSession()) {
+            List<EntidadPrestamos> listaPrestamosPersistencia = miSesion.createNativeQuery("SELECT * FROM prestamos", EntidadPrestamos.class).list();
+
+            for (EntidadPrestamos entidadPrestamo : listaPrestamosPersistencia) {
+                Prestamo prestamo = new Prestamo();
+                prestamo.setId(entidadPrestamo.getIdPrestamo());
+                prestamo.setIdLibro(entidadPrestamo.getIdLibro());
+                prestamo.setFechaPrestamo(entidadPrestamo.getFechaPrestamo());
+                prestamo.setFechaDevolucion(entidadPrestamo.getFechaDevolucion());
+                prestamo.setIdUsuario(entidadPrestamo.getIdUsuario());
+
+                listaPrestamosLogica.add(prestamo);
+            }
+        }
+
+        return listaPrestamosLogica;
+    }
+
+    public boolean agregarPrestamo(Prestamo prestamo) {
         boolean agregadoConExito = true;
 
         try (Session miSesion = JPAPersistencia.abrirSession()) {

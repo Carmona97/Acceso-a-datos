@@ -1,9 +1,11 @@
 package org.example.Entidades;
 
 import jakarta.persistence.*;
+import org.example.Negocio.Libro;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,7 +28,7 @@ public class EntidadLibros {
     @Column(name = "anio_publicacion", nullable = true)
     private Integer anioPublicacion;
     @ManyToOne
-    @JoinColumn(name = "id_autor", referencedColumnName = "id_autor")
+    @JoinColumn(name = "id_autor", referencedColumnName = "id_autor", insertable = false, updatable = false)
     private EntidadAutores autoresByIdAutor;
 
     public int getIdLibro() {
@@ -75,6 +77,29 @@ public class EntidadLibros {
 
     public void setAutoresByIdAutor(EntidadAutores autoresByIdAutor) {
         this.autoresByIdAutor = autoresByIdAutor;
+    }
+
+    public ArrayList<Libro> mostrarLibrosPersistencia() throws Exception {
+        ArrayList<Libro> listaLibrosLogica = new ArrayList<>();
+
+        try (Session miSesion = JPAPersistencia.abrirSession()) {
+            // Consulta para obtener todos los libros
+            List<EntidadLibros> listaLibrosPersistencia = miSesion.createNativeQuery("SELECT * FROM libros", EntidadLibros.class).list();
+
+            // Convertir los libros de la persistencia a objetos de tipo Libro
+            for (EntidadLibros entidadLibros : listaLibrosPersistencia) {
+                Libro libro = new Libro();
+                libro.setId(entidadLibros.getIdLibro());
+                libro.setTitulo(entidadLibros.getTitulo());
+                libro.setIdAutor(entidadLibros.getIdAutor());
+                libro.setGenero(entidadLibros.getGenero());
+                libro.setAnioPublicacion(entidadLibros.getAnioPublicacion());
+
+                listaLibrosLogica.add(libro);
+            }
+        }
+
+        return listaLibrosLogica;
     }
 
     public boolean agregarLibro(EntidadLibros libro) {

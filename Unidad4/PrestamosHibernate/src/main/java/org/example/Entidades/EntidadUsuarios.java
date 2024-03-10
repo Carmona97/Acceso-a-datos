@@ -1,9 +1,12 @@
 package org.example.Entidades;
 
 import jakarta.persistence.*;
+import org.example.Negocio.Autor;
+import org.example.Negocio.Usuario;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,8 +23,8 @@ public class EntidadUsuarios {
     @Basic
     @Column(name = "email", nullable = true, length = 100)
     private String email;
-    @OneToMany(mappedBy = "usuariosByIdUsuario")
-    private Collection<EntidadPrestamos> prestamosByIdUsuario;
+/*    @OneToMany(mappedBy = "usuariosByIdUsuario")
+    private Collection<EntidadPrestamos> prestamosByIdUsuario;*/
 
     public int getIdUsuario() {
         return idUsuario;
@@ -47,16 +50,34 @@ public class EntidadUsuarios {
         this.email = email;
     }
 
-    public Collection<EntidadPrestamos> getPrestamosByIdUsuario() {
+/*    public Collection<EntidadPrestamos> getPrestamosByIdUsuario() {
         return prestamosByIdUsuario;
     }
 
     public void setPrestamosByIdUsuario(Collection<EntidadPrestamos> prestamosByIdUsuario) {
         this.prestamosByIdUsuario = prestamosByIdUsuario;
+    }*/
+
+    public ArrayList<Usuario> mostrarUsuariosPersistencia() throws Exception {
+        ArrayList<Usuario> listaUsuariosLogica = new ArrayList<>();
+
+        try (Session miSesion = JPAPersistencia.abrirSession()) {
+            List<EntidadUsuarios> listaUsuariosPersistencia = miSesion.createNativeQuery("SELECT * FROM usuarios", EntidadUsuarios.class).list();
+
+            for (EntidadUsuarios entidadUsuarios : listaUsuariosPersistencia) {
+                Usuario usuario = new Usuario();
+                usuario.setIdUsuario(entidadUsuarios.getIdUsuario());
+                usuario.setNombreUsuario(entidadUsuarios.getNombreUsuario());
+                usuario.setEmail(entidadUsuarios.getEmail());
+
+                listaUsuariosLogica.add(usuario);
+            }
+        }
+
+        return listaUsuariosLogica;
     }
 
-
-    public boolean agregarUsuario(EntidadUsuarios usuario) {
+    public boolean agregarUsuario(Usuario usuario) {
         boolean agregadoConExito = true;
 
         try (Session miSesion = JPAPersistencia.abrirSession()) {

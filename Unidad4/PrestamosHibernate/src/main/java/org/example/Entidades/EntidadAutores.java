@@ -1,6 +1,7 @@
 package org.example.Entidades;
 
 import jakarta.persistence.*;
+import org.example.Negocio.Autor;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -45,28 +46,57 @@ public class EntidadAutores {
         this.pais = pais;
     }
 
-    public ArrayList<EntidadAutores> mostrarAutoresPersistencia() throws Exception {
+    public ArrayList<Autor> mostrarAutoresPersistencia() throws Exception {
 
-        ArrayList<EntidadAutores> listaAutoresPersistencia = new ArrayList<>();
+        ArrayList<Autor> listaAutoresLogica = new ArrayList<>();
 
         try (Session miSesion = JPAPersistencia.abrirSession()) {
-            listaAutoresPersistencia = (ArrayList<EntidadAutores>) miSesion.createNativeQuery("SELECT * FROM autores", EntidadAutores.class).list();
+            List<EntidadAutores> listaAutoresPersistencia = miSesion.createNativeQuery("SELECT * FROM autores", EntidadAutores.class).list();
+
+            for (EntidadAutores entidadAutores : listaAutoresPersistencia) {
+                Autor autor = new Autor();
+                autor.setId(entidadAutores.getIdAutor());
+                autor.setNombreAutor(entidadAutores.getNombreAutor());
+                autor.setPais(entidadAutores.getPais());
+
+                listaAutoresLogica.add(autor);
+            }
         }
 
-        return listaAutoresPersistencia;
+        return listaAutoresLogica;
     }
 
-    public boolean existeAutor() {
+    public boolean agregarAutor(Autor autor){
+        boolean anadidoConExito = true;
+        EntidadAutores nuevoAutor = new EntidadAutores();
+        Transaction transaction = null;
+        if (!nuevoAutor.existeAutor()) {
+            try (Session miSesion = JPAPersistencia.abrirSession()) {
+                transaction = miSesion.beginTransaction();
+                nuevoAutor.setIdAutor(autor.getId());
+                nuevoAutor.setNombreAutor(autor.getNombreAutor());
+                nuevoAutor.setPais(autor.getPais());
+                miSesion.persist(nuevoAutor);
+                miSesion.flush();
+                transaction.commit();
+            } catch (Exception e) {
+                anadidoConExito = false;
+            }
+        }
+        return anadidoConExito;
+    }
+
+
+    public boolean existeAutor(){
         boolean existe = true;
         List<EntidadAutores> comprobarCantidad = new ArrayList<>();
-
         try (Session miSesion = JPAPersistencia.abrirSession()) {
-            comprobarCantidad = miSesion.createNativeQuery("SELECT * FROM autores WHERE id_autor = ?", EntidadAutores.class).setParameter(1, idAutor).list();
-        } catch (Exception e) {
+            comprobarCantidad = miSesion.createNativeQuery("SELECT * FROM AUTOR WHERE ID = ?", EntidadAutores.class).setParameter(1, idAutor).list();
+        }catch (Exception e){
             e.printStackTrace();
         }
 
-        if (comprobarCantidad.size() != 1) {
+        if (comprobarCantidad.size() != 1){
             existe = false;
         }
         return existe;
@@ -88,25 +118,6 @@ public class EntidadAutores {
         return autor;
     }
 
-    public boolean agregarAutor(EntidadAutores autor) {
-        boolean agregadoConExito = true;
-
-        if (!existeAutor()) {
-            try (Session miSesion = JPAPersistencia.abrirSession()) {
-                Transaction transaction = miSesion.beginTransaction();
-                miSesion.persist(autor);
-                transaction.commit();
-            } catch (Exception e) {
-                agregadoConExito = false;
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("El autor ya existe en la base de datos.");
-            agregadoConExito = false;
-        }
-
-        return agregadoConExito;
-    }
 
     public boolean actualizarAutor(EntidadAutores autor) {
         boolean actualizadoConExito = true;
