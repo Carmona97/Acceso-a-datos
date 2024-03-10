@@ -4,6 +4,7 @@ import org.example.Entidades.JPAPersistencia;
 import org.example.vista.VistaAgencia;
 import org.example.vista.VistaCliente;
 import org.example.vista.VistaDestino;
+import org.example.vista.VistaVuelo;
 import org.hibernate.Session;
 import java.util.Scanner;
 
@@ -18,9 +19,10 @@ public class App
         VistaAgencia menuAgencia = new VistaAgencia();
         VistaCliente menuCliente = new VistaCliente();
         VistaDestino menuDestino = new VistaDestino();
+        VistaVuelo menuVuelo = new VistaVuelo();
 
         do {
-            System.out.println("Indique el menú al que desea acceder:\n1.Agencia\n2.Cliente\n3.Destino");
+            System.out.println("Indique el menú al que desea acceder: 0.Salir\n1.Agencia\n2.Cliente\n3.Destino\n4.Vuelos");
             opcion = scn.nextInt();
 
             switch (opcion){
@@ -28,6 +30,7 @@ public class App
                 case 1 -> menuAgencia.crudAgencia();
                 case 2 -> menuCliente.crudCliente();
                 case 3 -> menuDestino.crudDestino();
+                case 4 -> menuVuelo.crudVuelo();
                 default -> System.out.println("Elija una opcion valida");
             }
         } while (opcion != 0);

@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VueloDao {
-    public List<Vuelo> mostrarVuelos(Connection connection) throws SQLException, SQLException {
-        List<Vuelo> VueloList = new ArrayList<Vuelo>();
+    public List<Vuelo> mostrarVuelos(Connection connection) throws SQLException {
+        List<Vuelo> vueloList = new ArrayList<Vuelo>();
 
-        return VueloList;
+        return vueloList;
     }
 
     public boolean agregarVuelo(Connection connection,  Vuelo Vuelo) throws SQLException {

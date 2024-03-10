@@ -13,6 +13,7 @@
     <mapping class="org.example.Entidades.AgenciaEntidad"/>
     <mapping class="org.example.Entidades.ClienteEntidad"/>
     <mapping class="org.example.Entidades.DestinoEntidad"/>
+    <mapping class="org.example.Entidades.VueloEntidad"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
